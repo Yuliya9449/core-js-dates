@@ -73,9 +73,12 @@ function getDayName(date) {
  * Date('2024-02-16T00:00:00Z') => Date('2024-02-23T00:00:00Z')
  */
 //! 4
-function getNextFriday(/* date */) {
-  throw new Error('Not implemented');
+function getNextFriday(date) {
+  console.log(date.getDay());
 }
+
+const a = new Date('2024-02-03T00:00:00Z');
+console.log(getNextFriday(a));
 
 /**
  * Returns the number of days in a specified month and year.
