@@ -74,11 +74,16 @@ function getDayName(date) {
  */
 //! 4
 function getNextFriday(date) {
-  console.log(date.getDay());
-}
+  const weekLength = 7;
+  const requiredDayIdx = 5;
 
-const a = new Date('2024-02-03T00:00:00Z');
-console.log(getNextFriday(a));
+  const dayToday = date.getDay();
+
+  const daysToNextRequiredDay =
+    (weekLength + requiredDayIdx - dayToday) % weekLength || weekLength;
+
+  return new Date(date.setDate(date.getDate() + daysToNextRequiredDay));
+}
 
 /**
  * Returns the number of days in a specified month and year.
@@ -91,6 +96,7 @@ console.log(getNextFriday(a));
  * 1, 2024 => 31
  * 2, 2024 => 29
  */
+//! 5
 function getCountDaysInMonth(/* month, year */) {
   throw new Error('Not implemented');
 }
