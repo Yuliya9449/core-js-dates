@@ -58,7 +58,7 @@ function getTime(date) {
  */
 //! 3
 function getDayName(date) {
-  return new Date(date).toLocaleString('en-US', { weekday: 'long' });
+  return new Date(date).toLocaleString('en', { weekday: 'long' });
 }
 
 /**
@@ -157,8 +157,9 @@ function isDateInPeriod(date, { start, end }) {
  * '1999-01-05T02:20:00.000Z' => '1/5/1999, 2:20:00 AM'
  * '2010-12-15T22:59:00.000Z' => '12/15/2010, 10:59:00 PM'
  */
-function formatDate(/* date */) {
-  throw new Error('Not implemented');
+//! 8
+function formatDate(date) {
+  return new Date(date).toLocaleString('en', { timeZone: 'UTC' });
 }
 
 /**
@@ -173,6 +174,7 @@ function formatDate(/* date */) {
  * 12, 2023 => 10
  * 1, 2024 => 8
  */
+//! 9
 function getCountWeekendsInMonth(/* month, year */) {
   throw new Error('Not implemented');
 }
