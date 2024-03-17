@@ -334,8 +334,6 @@ function getWorkSchedule({ start, end }, countWorkDays, countOffDays) {
   return resArr;
 }
 
-// console.log(getWorkSchedule({ start: '01-01-2024', end: '15-01-2024' }, 1, 3));
-
 /**
  * Determines whether the year in the provided date is a leap year.
  * A leap year is a year divisible by 4, but not by 100, unless it is also divisible by 400.
@@ -348,8 +346,11 @@ function getWorkSchedule({ start, end }, countWorkDays, countOffDays) {
  * Date(2022, 2, 1) => false
  * Date(2020, 2, 1) => true
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+//! 14
+function isLeapYear(date) {
+  const year = date.getFullYear();
+
+  return (!(year % 4) && !!(year % 100)) || !(year % 400);
 }
 
 module.exports = {
